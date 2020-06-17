@@ -7,6 +7,7 @@ import './app.scss';
 import Header from './components/header';
 import Footer from './components/footer';
 import Form from './components/form/form.js';
+import Results from './components/results/results.js';
 
 class App extends React.Component {
   render() {
@@ -14,7 +15,7 @@ class App extends React.Component {
       <React.Fragment>
         <Header />
         <Form />
-        <Result />
+        <Results />
         <Footer />
       </React.Fragment>
     );
