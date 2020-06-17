@@ -1,3 +1,4 @@
+![Node.js CI](https://github.com/mcbarnhart/Lab32-testingAndDeployment/workflows/Node.js%20CI/badge.svg)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/1bd41f07-7ddc-4605-9a3b-dc2d5b2644c1/deploy-status)](https://app.netlify.com/sites/epic-murdock-a9fb88/deploys)
 # LAB - React Testing and Deployment
 
