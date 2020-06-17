@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Lab32-testingAndDeployment/static/css/main.ee6e89ee.chunk.css",
+    "main.js": "/Lab32-testingAndDeployment/static/js/main.b2338337.chunk.js",
+    "main.js.map": "/Lab32-testingAndDeployment/static/js/main.b2338337.chunk.js.map",
+    "runtime-main.js": "/Lab32-testingAndDeployment/static/js/runtime-main.1a66af8d.js",
+    "runtime-main.js.map": "/Lab32-testingAndDeployment/static/js/runtime-main.1a66af8d.js.map",
+    "static/js/2.e37d5b6a.chunk.js": "/Lab32-testingAndDeployment/static/js/2.e37d5b6a.chunk.js",
+    "static/js/2.e37d5b6a.chunk.js.map": "/Lab32-testingAndDeployment/static/js/2.e37d5b6a.chunk.js.map",
+    "index.html": "/Lab32-testingAndDeployment/index.html",
+    "precache-manifest.4d46cf5f2a8175b5963c3cf865d99655.js": "/Lab32-testingAndDeployment/precache-manifest.4d46cf5f2a8175b5963c3cf865d99655.js",
+    "service-worker.js": "/Lab32-testingAndDeployment/service-worker.js",
+    "static/css/main.ee6e89ee.chunk.css.map": "/Lab32-testingAndDeployment/static/css/main.ee6e89ee.chunk.css.map",
+    "static/js/2.e37d5b6a.chunk.js.LICENSE.txt": "/Lab32-testingAndDeployment/static/js/2.e37d5b6a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1a66af8d.js",
+    "static/js/2.e37d5b6a.chunk.js",
+    "static/css/main.ee6e89ee.chunk.css",
+    "static/js/main.b2338337.chunk.js"
+  ]
+}
