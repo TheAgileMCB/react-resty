@@ -51,7 +51,7 @@ class Form extends React.Component {
   render() {
     return (
       <>
-        <form onSubmit={this.handleSubmit}>
+        <form data-testid="form" onSubmit={this.handleSubmit}>
           <label >
             <span>URL: </span>
             <input name='url' type='text' onChange={this.handleChangeURL} />
