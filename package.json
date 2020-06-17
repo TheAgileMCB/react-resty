@@ -1,6 +1,5 @@
 {
   "name": "class-26-solution",
-  "homepage": "https://mcbarnhart.github.io/Lab32-testingAndDeployment/",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
@@ -14,8 +13,10 @@
     "react-scripts": "3.4.1"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.10.1",
     "@testing-library/react": "^10.2.1",
-    "gh-pages": "^3.0.0"
+    "gh-pages": "^3.0.0",
+    "react-test-renderer": "^16.13.1"
   },
   "scripts": {
     "predeploy": "npm run build",
