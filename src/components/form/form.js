@@ -50,7 +50,6 @@ class Form extends React.Component {
 
   render() {
     return (
-      <>
         <form data-testid="form" onSubmit={this.handleSubmit}>
           <label >
             <span>URL: </span>
@@ -64,11 +63,6 @@ class Form extends React.Component {
             <span className={this.state.method === 'delete' ? 'active' : ''} id="delete" onClick={this.handleChangeMethod}>DELETE</span>
           </label>
         </form>
-        <section className="results">
-          <span className="method">{this.state.request.method}</span>
-          <span className="url">{this.state.request.url}</span>
-        </section>
-      </>
     );
   }
 }

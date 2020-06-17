@@ -14,6 +14,7 @@ class App extends React.Component {
       <React.Fragment>
         <Header />
         <Form />
+        <Result />
         <Footer />
       </React.Fragment>
     );
