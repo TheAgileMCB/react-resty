@@ -40,17 +40,6 @@ class Form extends React.Component {
       let url = '';
       let method = '';
 
-      let response = fetch(this.state.url);
-      let data = response.json();
-
-      console.log(data);
-
-      let results = data.map(r => ({
-        id: r.id,
-        name: r.name
-      }));
-      this.props.onReceiveResults(results);
-
       this.setState({request, url, method});
       e.target.reset();
 
