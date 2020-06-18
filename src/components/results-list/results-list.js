@@ -1,5 +1,4 @@
 import React from 'react';
-//import App from './../../app.js';
 
 export default function ResultsList (props) {
   if (props.loading) {

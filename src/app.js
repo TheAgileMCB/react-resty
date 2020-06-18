@@ -22,7 +22,7 @@ class App extends React.Component {
   }
 
   onReceiveResults = results => {
-    this.setResults({ results});
+    //this.setResults({ results});
     this.setState({ results });
   }
 
@@ -31,7 +31,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Header />
-        <Form onReceiveResults={this.setResults} toggleLoading={this.toggleResultsLoading} />
+        <Form onReceiveResults={this.onReceiveResults} toggleLoading={this.toggleResultsLoading} />
         <Results />
         <Footer />
       </React.Fragment>
