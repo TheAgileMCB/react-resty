@@ -13,10 +13,12 @@ class Form extends React.Component {
     };
   }
 
-  handleSubmit = e => {
+  handleSubmit = async e => {
     e.preventDefault();
 
     if ( this.state.url && this.state.method ) {
+
+      //this.props.toggleLoading();
 
       // Make an object that would be suitable for superagent
       let request = {
@@ -28,9 +30,21 @@ class Form extends React.Component {
       let url = '';
       let method = '';
 
+      let response = await fetch(this.state.url);
+      let data = await response.json();
+
+      console.log(data);
+
+      let results = data.map(r => ({
+        id: r.id,
+        name: r.name
+      }));
+      this.props.onReceiveResults(results);
+
       this.setState({request, url, method});
       e.target.reset();
 
+      //this.props.toggleLoading();
     }
 
     else {

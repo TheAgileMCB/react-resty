@@ -10,11 +10,28 @@ import Form from './components/form/form.js';
 import Results from './components/results/results.js';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      resultsLoading: false,
+      statusCode: null,
+      headers: null,
+      results: [],
+    };
+  }
+
+  onReceiveResults = results => {
+    this.setResults({ results});
+    this.setState({ results });
+  }
+
+
   render() {
     return (
       <React.Fragment>
         <Header />
-        <Form />
+        <Form onReceiveResults={this.setResults} toggleLoading={this.toggleResultsLoading} />
         <Results />
         <Footer />
       </React.Fragment>
