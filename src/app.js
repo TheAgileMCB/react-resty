@@ -16,10 +16,10 @@ class App extends React.Component {
     this.state = {
       resultsLoading: false,
       Results: {
-      statusCode: null,
-      headers: null,
-      body: null,
-      },
+        statusCode: null,
+        headers: null,
+        body: null
+      }
     };
   }
 
@@ -30,17 +30,26 @@ class App extends React.Component {
         header,
         body,
       }
-    })
+    });
   }
 
+  toggleResultsLoading = () => {
+    this.setState(
+      state => ({ resultsLoading: !state.resultsLoading }),
+      () => {
+        console.log('Loading toggled', this.state.resultsLoading);
+      }
+    );
+  }
 
   render() {
     return (
       <React.Fragment>
         <Header />
-        <Form onReceiveResults={this.setResults} />
-        {/* toggleLoading={this.toggleResultsLoading} */}
-        <Results body = {this.state.Results} />
+        <Form onReceiveResults={this.setResults}
+          toggleLoading={this.toggleResultsLoading} />
+        <Results body={this.state.Results}
+          loading={this.state.resultsLoading} />
         <Footer />
       </React.Fragment>
     );

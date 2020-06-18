@@ -26,7 +26,7 @@ class Form extends React.Component {
 
     if ( this.state.url && this.state.method ) {
 
-      //this.props.toggleLoading();
+      this.props.toggleLoading();
 
       // Make an object that would be suitable for superagent
       let request = {
@@ -43,7 +43,7 @@ class Form extends React.Component {
       this.setState({request, url, method});
       e.target.reset();
 
-      //this.props.toggleLoading();
+      this.props.toggleLoading();
     }
 
     else {
