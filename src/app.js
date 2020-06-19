@@ -7,13 +7,40 @@ import './app.scss';
 import Header from './components/header';
 import Footer from './components/footer';
 import Form from './components/form/form.js';
+import Results from './components/results/results.js';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      resultsLoading: false,
+      Results: {
+      statusCode: null,
+      headers: null,
+      body: null,
+      },
+    };
+  }
+
+  setResults = (body, header, statusCode) => {
+    this.setState({
+      Results: {
+        statusCode,
+        header,
+        body,
+      }
+    })
+  }
+
+
   render() {
     return (
       <React.Fragment>
         <Header />
-        <Form />
+        <Form onReceiveResults={this.setResults} />
+        {/* toggleLoading={this.toggleResultsLoading} */}
+        <Results body = {this.state.Results} />
         <Footer />
       </React.Fragment>
     );

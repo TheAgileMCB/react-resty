@@ -13,16 +13,28 @@ class Form extends React.Component {
     };
   }
 
+  async getDataFromApi(){
+    let response = await fetch(this.state.url)
+    let body = await response.json();
+    let header = [...response.headers.entries()];
+    let statusCode = response.status;
+    this.props.onReceiveResults(body, header, statusCode);
+  }
+
   handleSubmit = e => {
     e.preventDefault();
 
     if ( this.state.url && this.state.method ) {
+
+      //this.props.toggleLoading();
 
       // Make an object that would be suitable for superagent
       let request = {
         url: this.state.url,
         method: this.state.method,
       };
+
+      this.getDataFromApi();
 
       // Clear old settings
       let url = '';
@@ -31,6 +43,7 @@ class Form extends React.Component {
       this.setState({request, url, method});
       e.target.reset();
 
+      //this.props.toggleLoading();
     }
 
     else {
@@ -50,7 +63,6 @@ class Form extends React.Component {
 
   render() {
     return (
-      <>
         <form data-testid="form" onSubmit={this.handleSubmit}>
           <label >
             <span>URL: </span>
@@ -64,11 +76,6 @@ class Form extends React.Component {
             <span className={this.state.method === 'delete' ? 'active' : ''} id="delete" onClick={this.handleChangeMethod}>DELETE</span>
           </label>
         </form>
-        <section className="results">
-          <span className="method">{this.state.request.method}</span>
-          <span className="url">{this.state.request.url}</span>
-        </section>
-      </>
     );
   }
 }
