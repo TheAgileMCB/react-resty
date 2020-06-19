@@ -13,7 +13,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    let ApiDataFromStorage = JSON.parse(window.localStorage.Results || '[]');
+    //let ApiResultsFromStorage = JSON.parse(window.localStorage.Results || '[]');
 
     this.state = {
       resultsLoading: false,
@@ -33,8 +33,6 @@ class App extends React.Component {
         body,
       }
     });
-
-    window.localStorage.Results = JSON.stringify(Results);
   }
 
   toggleResultsLoading = () => {
