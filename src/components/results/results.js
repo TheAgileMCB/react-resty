@@ -1,8 +1,5 @@
 import React from 'react';
-//import Form from './../form/form.js';
-// import ResultsList from './../results-list/results-list.js';
 import ReactJson from 'react-json-view';
-// import { render } from 'node-sass';
 
 
 // class Results extends React.Component {
