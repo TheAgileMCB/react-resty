@@ -26,7 +26,7 @@ export default function Results(props) {
         <>
             <h2>Results</h2>
 
-            <span><ReactJson src={props.body} theme="hopscotch" /></span>
+            <span className="results"><ReactJson src={props.body} theme="hopscotch" /></span>
 
         </>
     );

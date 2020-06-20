@@ -19,6 +19,19 @@ body {
     height: 100%;
   }
 
+  .form-wrapper {
+    background: $greyGradient;
+    border: 2px double goldenrod;
+    margin: 45px;
+    align-self: center;
+    display: flex;
+    justify-content: space-evenly;
+    min-width: 400px;
+    button, span {
+      border: 1px solid white;
+    }
+  }
+
   footer {
     background: $backgroundColor;
     border-top: 1px solid #eee;
@@ -28,6 +41,18 @@ body {
     margin: 0;
     position: fixed;
     bottom: 0;
+  }
+
+  .about-wrapper{
+    color: #fff;
+    h1 {
+      color: goldenrod;
+    }
+  }
+
+  .results{
+    background: #000;
+    border: 2px double goldenrod;
   }
 
   header {
