@@ -1,12 +1,24 @@
 import React from 'react';
 
+import { Link, Router } from 'react-router-dom';
+
 class Header extends React.Component {
   render() {
     return (
-      <header>
-        <h1>RESTy-ful Knight</h1>
-        <h2>A Postman copycat</h2>
-      </header>
+      <>
+        <header>
+          <h1>RESTy-ful Knight</h1>
+          <h3>A Postman copycat</h3>
+          <nav>
+            <ul>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="https://en.wikipedia.org/wiki/Representational_state_transfer">Additional Resource</Link></li>
+            </ul>
+          </nav>
+          
+        </header>
+      </>
     );
   }
 }

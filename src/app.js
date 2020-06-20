@@ -1,13 +1,12 @@
 import React from 'react';
-
+import { Switch, Route } from 'react-router-dom';
 import './app.scss';
 
-// Let's talk about using index.js and some other name in the component folder
-// There's pros and cons for each way of doing this ...
 import Header from './components/header';
 import Footer from './components/footer';
 import Form from './components/form/form.js';
 import Results from './components/results/results.js';
+import About from './components/about';
 
 class App extends React.Component {
   constructor(props) {
@@ -48,10 +47,19 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Header />
-        <Form onReceiveResults={this.setResults}
-          toggleLoading={this.toggleResultsLoading} />
-        <Results body={this.state.Results}
-          loading={this.state.resultsLoading} />
+        <Switch>
+          <Route exact path="/">
+            <Form onReceiveResults={this.setResults}
+              toggleLoading={this.toggleResultsLoading} />
+          </Route>
+          <Route path="/results">
+            <Results body={this.state.Results}
+              loading={this.state.resultsLoading} />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+        </Switch>
         <Footer />
       </React.Fragment>
     );
