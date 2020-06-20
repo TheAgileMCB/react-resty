@@ -1,13 +1,16 @@
-$backgroundColor: #f5f5f5;
+$backgroundColor: linear-gradient(to bottom right, rgba(255, 196, 0, 0.911), rgba(173, 150, 14, 0.884), rgba(169, 172, 8, 0.884));
+$greyGradient: linear-gradient(to bottom, rgb(167, 166, 166), rgb(236, 230, 195), rgb(167, 166, 166));
 
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 body {
-  background: $backgroundColor;
+  background: #000;
   height: 100%;
 
   #root {
@@ -17,18 +20,40 @@ body {
   }
 
   footer {
-    background: darken($backgroundColor, 50);
+    background: $backgroundColor;
     border-top: 1px solid #eee;
+    color: #fff;
+    width: 100%;
     padding: 1em 3em;
     margin: 0;
+    position: fixed;
+    bottom: 0;
   }
 
   header {
-    background: darken($backgroundColor, 75);
-    border-bottom: 1px solid #eee;
+    background: $backgroundColor;
     color: #eee;
     padding: 0;
     margin: 0;
     text-align: center;
+    h1{
+      margin-bottom: 0;
+    }
+    h3 {
+      margin-top: 0;
+    }
+    .nav {
+      background: $greyGradient;
+      border-top:  2px solid grey;
+      border-bottom:  2px solid grey;
+      display: flex;
+      justify-content: space-around;
+      p {
+        a {
+          text-decoration: none;
+          color: goldenrod;
+        }
+      }
+    }
   }
 }
