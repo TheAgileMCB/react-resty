@@ -12,16 +12,24 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    let ApiResultsFromStorage = JSON.parse(window.localStorage.results || '[]');
+    //let ApiResultsFromStorage = JSON.parse(window.localStorage.results || '[]');
 
     this.state = {
       resultsLoading: false,
-      Results: ApiResultsFromStorage,
+      url: null,
+      method: null,
+      Results: {
+        statusCode: null,
+        header: null,
+        body: null,
+      },
     };
   }
 
-  setResults = (body, header, statusCode) => {
+  setResults = (body, header, statusCode, url, method) => {
     this.setState({
+      url,
+      method,
       Results: {
         statusCode,
         header,
@@ -29,7 +37,7 @@ class App extends React.Component {
       }
     });
 
-    window.localStorage.results = JSON.stringify(Results);
+    window.localStorage.results = JSON.stringify(this.state)
   }
 
   toggleResultsLoading = () => {
@@ -52,6 +60,8 @@ class App extends React.Component {
           </Route>
           <Route path="/results">
             <Results body={this.state.Results}
+              url={this.state.url}
+              method={this.state.method}
               loading={this.state.resultsLoading} />
           </Route>
           <Route path="/about">
