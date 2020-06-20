@@ -12,17 +12,10 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    //let ApiResultsFromStorage = JSON.parse(window.localStorage.results || '[]');
+    let ApiResultsFromStorage = JSON.parse(window.localStorage.results || '[]');
 
     this.state = {
-      resultsLoading: false,
-      url: null,
-      method: null,
-      Results: {
-        statusCode: null,
-        header: null,
-        body: null,
-      },
+   ApiResultsFromStorage
     };
   }
 
