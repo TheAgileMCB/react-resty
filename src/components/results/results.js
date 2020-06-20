@@ -22,7 +22,10 @@ export default function Results(props) {
     return (
         <>
             <h2>Results</h2>
-
+            <div className="url=method">
+                <h3>Method: {props.method}</h3>
+                <h3>URL: {props.url}</h3>
+            </div>
             <span className="results"><ReactJson src={props.body} theme="hopscotch" /></span>
 
         </>
