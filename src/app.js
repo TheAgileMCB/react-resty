@@ -59,6 +59,9 @@ class App extends React.Component {
           <Route path="/about">
             <About />
           </Route>
+          <Route>
+            <img alt="404 Not Found!" src=".\assets\kitteh404.png" />
+          </Route>
         </Switch>
         <Footer />
       </React.Fragment>
