@@ -1,56 +1,60 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`matches snapshot 1`] = `
-<form
-  data-testid="form"
-  onSubmit={[Function]}
+<div
+  className="form-wrapper"
 >
-  <label>
-    <span>
-      URL: 
-    </span>
-    <input
-      name="url"
-      onChange={[Function]}
-      type="text"
-    />
-    <button
-      type="submit"
-    >
-      GO!
-    </button>
-  </label>
-  <label
-    className="methods"
+  <form
+    data-testid="form"
+    onSubmit={[Function]}
   >
-    <span
-      className=""
-      id="get"
-      onClick={[Function]}
+    <label>
+      <span>
+        URL: 
+      </span>
+      <input
+        name="url"
+        onChange={[Function]}
+        type="text"
+      />
+      <button
+        type="submit"
+      >
+        GO!
+      </button>
+    </label>
+    <label
+      className="methods"
     >
-      GET
-    </span>
-    <span
-      className=""
-      id="post"
-      onClick={[Function]}
-    >
-      POST
-    </span>
-    <span
-      className=""
-      id="put"
-      onClick={[Function]}
-    >
-      PUT
-    </span>
-    <span
-      className=""
-      id="delete"
-      onClick={[Function]}
-    >
-      DELETE
-    </span>
-  </label>
-</form>
+      <span
+        className=""
+        id="get"
+        onClick={[Function]}
+      >
+        GET
+      </span>
+      <span
+        className=""
+        id="post"
+        onClick={[Function]}
+      >
+        POST
+      </span>
+      <span
+        className=""
+        id="put"
+        onClick={[Function]}
+      >
+        PUT
+      </span>
+      <span
+        className=""
+        id="delete"
+        onClick={[Function]}
+      >
+        DELETE
+      </span>
+    </label>
+  </form>
+</div>
 `;
