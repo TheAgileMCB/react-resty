@@ -7,16 +7,29 @@ import Footer from './components/footer';
 import Form from './components/form/form.js';
 import Results from './components/results/results.js';
 import About from './components/about';
+// import History from './components/history';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
-    let ApiResultsFromStorage = JSON.parse(window.localStorage.results || '[]');
+    // var results = JSON.parse(window.localStorage.results) || [];
 
     this.state = {
-   ApiResultsFromStorage
+      resultsLoading: false,
+      // results,
+
     };
+  }
+
+  componentDidMount() {
+    this.recover();
+  }
+
+  recover() {
+    let data = JSON.parse(window.localStorage.getItem('history') || '[]');
+
+    this.setState({ history: data.history });
   }
 
   setResults = (body, header, statusCode, url, method) => {
@@ -30,8 +43,27 @@ class App extends React.Component {
       }
     });
 
-    window.localStorage.results = JSON.stringify(this.state)
+    //window.localStorage.results = this.saveToStorage;
+    // window.localStorage.results = JSON.stringify(this.state)
+    // getHistory = function () {
+    //   return JSON.parse(window.localStorage.results) || [];
+    // }
+
+    // addToHistory = function(data) {
+    //   var history = getHistory();
+    //   history.unshift(data);
+    //   window.localStorage.setItem('results', JSON.stringify(history.slice(0, 10)));
+    // }
+    // addToHistory();
   }
+
+  // saveToStorage() {
+  //   let history = this.state.history ? this.state.history : { history: [] };
+
+  //   history.push(this.state);
+
+  //   window.localStorage.setItem('history', JSON.stringify(history));
+  // }
 
   toggleResultsLoading = () => {
     this.setState(
@@ -49,6 +81,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/">
             <Form onReceiveResults={this.setResults}
+              // history={this.state.history}
               toggleLoading={this.toggleResultsLoading} />
           </Route>
           <Route path="/results">
@@ -60,9 +93,13 @@ class App extends React.Component {
           <Route path="/about">
             <About />
           </Route>
+          {/* <Route>
+            <History history={this.state.history} />
+          </Route> */}
           <Route>
             <img alt="404 Not Found!" src=".\assets\kitteh404.png" />
           </Route>
+
         </Switch>
         <Footer />
       </React.Fragment>

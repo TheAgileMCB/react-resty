@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './form.scss';
 
 class Form extends React.Component {
@@ -70,7 +69,10 @@ class Form extends React.Component {
       <div className="sidebar">
         {this.state.history ? this.state.history.map((item) => {
           return (
-            <Link to={item.link}>{item.text}</Link>
+            <>
+            <h5>{this.state.history.method}</h5>
+            <h5>{this.state.history.url}</h5>
+            </>
           )
         }) : 'no history'}
       </div>
