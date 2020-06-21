@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import './form.scss';
 
 class Form extends React.Component {
@@ -66,6 +66,14 @@ class Form extends React.Component {
 
   render() {
     return (
+      <>
+      <div className="sidebar">
+        {this.state.history ? this.state.history.map((item) => {
+          return (
+            <Link to={item.link}>{item.text}</Link>
+          )
+        }) : 'no history'}
+      </div>
       <div className="form-wrapper">
         <form data-testid="form" onSubmit={this.handleSubmit}>
           <label >
@@ -81,6 +89,7 @@ class Form extends React.Component {
           </label>
         </form>
         </div>
+        </>
     );
   }
 }
