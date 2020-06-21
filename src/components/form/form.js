@@ -1,5 +1,8 @@
 import React from 'react';
+import Modal from './../modal';
 import './form.scss';
+import { If } from './../If/If.js';
+import ReactJson from 'react-json-view';
 
 class Form extends React.Component {
 
@@ -9,6 +12,7 @@ class Form extends React.Component {
       url: '',
       method: '',
       request: {},
+      showModal: false,
     };
   }
 
@@ -63,19 +67,37 @@ class Form extends React.Component {
     this.setState({ method });
   };
 
+  toggleModal = () => {
+   this.setState(oldState => ({ showModal: !oldState.showModal }));
+  }
+
   render() {
+    const { showModal } = this.state;
     return (
       <>
+      <If condition={showModal}>
+      <Modal title="Details" onClose={this.toggleModal}>
+      <div>
+                <h3>Method: {this.props.method}</h3>
+                <h3>URL: {this.props.url}</h3>
+            </div>
+            <span><ReactJson src={this.props.body} theme="hopscotch" /></span>
+      </Modal>
+      </If>
+
       <div className="sidebar">
+      <button onClick={this.toggleModal}>Details</button>
         {this.state.history ? this.state.history.map((item) => {
           return (
             <>
             <h5>{this.state.history.method}</h5>
             <h5>{this.state.history.url}</h5>
+            {/* modal clicker goes here */}
             </>
           )
         }) : 'no history'}
       </div>
+
       <div className="form-wrapper">
         <form data-testid="form" onSubmit={this.handleSubmit}>
           <label >

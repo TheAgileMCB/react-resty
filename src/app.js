@@ -81,6 +81,9 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/">
             <Form onReceiveResults={this.setResults}
+              body={this.state.Results}
+              url={this.state.url}
+              method={this.state.method}
               // history={this.state.history}
               toggleLoading={this.toggleResultsLoading} />
           </Route>
