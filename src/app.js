@@ -78,6 +78,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Header />
+        <main>
         <Switch>
           <Route exact path="/">
             <Form onReceiveResults={this.setResults}
@@ -102,8 +103,8 @@ class App extends React.Component {
           <Route>
             <img alt="404 Not Found!" src=".\assets\kitteh404.png" />
           </Route>
-
         </Switch>
+        </main>
         <Footer />
       </React.Fragment>
     );

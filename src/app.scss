@@ -9,6 +9,26 @@ html, body {
   font-family: sans-serif;
 }
 
+main {
+  .sidebar {
+    background: steelblue;
+    border-right: 3px double goldenrod;
+    width: 200px;
+    position: fixed;
+    left: 0;
+    height: 100%;
+    // display: flex;
+    // justify-content: center;
+    // align-content: center;
+    button {
+      height: 1.5rem;
+    }
+  }
+  .wrapper {
+    margin-left: 200px;
+  }
+}
+
 body {
   background: grey;
   min-height: 100%;
@@ -23,12 +43,12 @@ body {
   .form-wrapper {
     background: $backgroundColor;
     border: 3px double goldenrod;
-    margin: 45px;
+    margin: 5rem auto;
     color: #000;
     align-self: center;
     display: flex;
     justify-content: space-evenly;
-    min-width: 400px;
+    width: 400px;
     button, span {
       border: 1px solid steelblue;
     }
@@ -85,13 +105,5 @@ body {
         }
       }
     }
-  }
-  .sidebar {
-    background: steelblue;
-    border-right: 3px double goldenrod;
-    width: 200px;
-    position: fixed;
-    left: 0;
-    height: 100%;
   }
 }
