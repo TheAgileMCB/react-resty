@@ -1,4 +1,4 @@
-$backgroundColor: linear-gradient(to bottom right, rgba(255, 196, 0, 0.911), rgba(173, 150, 14, 0.884), rgba(169, 172, 8, 0.884));
+$backgroundColor: linear-gradient(to bottom right, rgba(255, 196, 0, 0.692), rgba(200, 140, 0, 0.671), rgba(200, 171, 8, 0.733));
 $greyGradient: linear-gradient(to bottom, rgb(167, 166, 166), rgb(236, 230, 195), rgb(167, 166, 166));
 
 html, body {
@@ -10,8 +10,8 @@ html, body {
 }
 
 body {
-  background: #000;
-  height: 100%;
+  background: grey;
+  min-height: 100%;
 
   #root {
     display: flex;
@@ -21,26 +21,27 @@ body {
   }
 
   .form-wrapper {
-    background: $greyGradient;
+    background: $backgroundColor;
     border: 3px double goldenrod;
     margin: 45px;
+    color: #000;
     align-self: center;
     display: flex;
     justify-content: space-evenly;
     min-width: 400px;
     button, span {
-      border: 1px solid white;
+      border: 1px solid steelblue;
     }
   }
 
   footer {
     background: $backgroundColor;
-    border-top: 1px solid #eee;
+    border-top: 3px double goldenrod;
     color: #fff;
     width: 100%;
     padding: 1em 3em;
     margin: 0;
-    position: relative;
+    position: fixed;
     bottom: 0;
   }
 
@@ -84,5 +85,13 @@ body {
         }
       }
     }
+  }
+  .sidebar {
+    background: steelblue;
+    border-right: 3px double goldenrod;
+    width: 200px;
+    position: fixed;
+    left: 0;
+    height: 100%;
   }
 }
