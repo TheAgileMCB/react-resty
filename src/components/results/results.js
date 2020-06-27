@@ -1,11 +1,8 @@
 import React from 'react';
-//import Form from './../form/form.js';
-// import ResultsList from './../results-list/results-list.js';
 import ReactJson from 'react-json-view';
-// import { render } from 'node-sass';
 
 
-//class Results extends React.Component {
+// class Results extends React.Component {
 // toggleResultsLoading = () => {
 //     this.setState(
 //         state => ({ resultsLoading: !state.resultsLoading }),
@@ -16,12 +13,21 @@ import ReactJson from 'react-json-view';
 // }
 
 export default function Results(props) {
+    if (props.loading) {
+        return (
+            <h2>Loading....</h2>
+        );
+    }
+
     return (
         <>
             <h2>Results</h2>
+            <div className="url-method">
+                <h3>Method: {props.method}</h3>
+                <h3>URL: {props.url}</h3>
+            </div>
+            <span className="results"><ReactJson src={props.body} theme="hopscotch" /></span>
 
-                 <span><ReactJson src={props.body} theme="hopscotch" /></span>
-        
         </>
     );
 }
